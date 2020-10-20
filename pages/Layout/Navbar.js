@@ -5,7 +5,7 @@ export default function Navbar(props) {
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
             <div className="container d-flex" >
-          <a class="navbar-brand" href="#"> {props.data.query.store} </a>
+          <a class="navbar-brand" href="#"> Ama Store </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
