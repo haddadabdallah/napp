@@ -14,31 +14,20 @@ import Link from 'next/link'
     return res
   }
 
-  export  const getStaticProps  = async ({params}) =>{
-
-    const adan = await getdata()
-
-    return {
-      props : {adan}
-    }
-
-    
-  }
 
 
 
 export default function Home(props) {
 
 
-  console.log(props.adan.results.datetime[0].times.Imsak);
 
   return (
     <div className='container'>
 
-  <h1>{props.adan.results.datetime[0].times.Imsak}</h1>
 
-        <h1> store app </h1>
-        <Link href="/produits">
+
+        <h1> Créez votre boutique en ligne </h1>
+        <Link href="/produits/produits">
 
 
         <button type="button" class="btn btn-primary">Primary</button>
