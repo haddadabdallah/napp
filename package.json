@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "export": "npm run build && next export"
-
   },
   "dependencies": {
+    "bootstrap": "5.0.0-alpha1",
     "next": "9.5.5",
     "react": "16.14.0",
     "react-dom": "16.14.0"
