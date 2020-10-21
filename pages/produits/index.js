@@ -5,7 +5,11 @@ export default function produits() {
     return (
 
         <>
-            <Navbar />
+
+<Navbar />
+  
+        <div className="main_body">
+       
 
             <div className="top_head" >
                 <h2> Produits </h2>
@@ -20,7 +24,7 @@ export default function produits() {
 
                             <label className='mr-3' >TRIER PAR</label>
 
-                            <select class="form-select " aria-label="Default select example">
+                            <select className="form-select " aria-label="Default select example">
                                 <option value="1">Alphabétique, de Z à A</option>
                                 <option value="2">Prix: faible à élevé</option>
                                 <option value="3">Prix: élevé à faible</option>
@@ -38,7 +42,12 @@ export default function produits() {
 
             <div className="container" >
             </div>
-        </>
 
+
+
+        </div>
+
+
+        </>
     )
 }
