@@ -163,6 +163,17 @@
 }
 
 
+.slide_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  red;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+
 /** Respo **/
 
 @media screen and (max-width: 992px) {

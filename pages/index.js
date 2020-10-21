@@ -5,33 +5,45 @@ import Link from 'next/link'
 import Navbar from './Layout/Navbar'
 import ProduitCart from './Layout/ProduitCart'
 
-
+import Slider from 'react-animated-slider';
+import 'react-animated-slider/build/horizontal.css';
 
 
 
 
 export default function Home(props) {
 
+  const slides = [
+    { title: 'First item', description: 'Lorem ipsum' , image : '/image/backhead.png' , button : 'Voir pluse'},
+    
+  ];
+  
 
   return (
     <>
  <Navbar /> 
 
 
-      
 
       
 
       <div className="main_body">
-      <div id="carouselExampleControls" className="carousel slide " data-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item  active">
-            <img src="https://demo.accesspressthemes.com/wordpress-plugins/wp-1-slider-pro/wp-content/uploads/2016/10/2016-10-18-1.jpg" className="d-block w-100" alt="..." />
-          </div>
-        </div>
-      </div>
+ 
 
+      <Slider>
+  {slides.map((slide, index) => <div key={index} 
+  style={{ background: `url('${slide.image}') no-repeat center center` }}
+  >
 
+<div className="center slide_home ">
+				<h1>{slide.title}</h1>
+				<p>{slide.description}</p>
+				<button>{slide.button}</button>
+			</div>
+ 
+  </div>)}
+</Slider>
+      
 
       <div className='container'>
 
