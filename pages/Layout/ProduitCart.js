@@ -16,7 +16,7 @@ export default function ProduitCart(props) {
             <div className="produit_title mt-3 mb-3">
               
         
-              <Link href={`/produits/${id}`}><h5> {name} </h5></Link>
+              <Link href={`/produits/123${id}`}><h5> {name} </h5></Link>
         
             </div>
         

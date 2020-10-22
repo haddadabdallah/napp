@@ -161,7 +161,7 @@ export default function Home(props) {
 
 
 const getdata = async () => {
-  const res = await fetch("http://localhost:3000/api/produits").then((res) =>
+  const res = await fetch("https://dzshop.vercel.app/api/produits").then((res) =>
     res.json()
   );
 
