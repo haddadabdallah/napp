@@ -173,6 +173,16 @@
   width: 100%;
 }
 
+.card_costum{
+  box-shadow: 0 5px 23px rgba(188, 207, 219, 0.35);
+  border: 0;
+}
+
+
+.bay_btn{
+  background: #ffca00;
+}
+
 
 /** Respo **/
 

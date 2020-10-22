@@ -14,6 +14,8 @@
     "react": "16.14.0",
     "react-animated-slider": "^2.0.0",
     "react-dom": "16.14.0",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "react-image-magnify": "^2.7.4",
+    "react-swift-slider": "^6.5.0"
   }
 }

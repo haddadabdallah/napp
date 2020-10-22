@@ -11,7 +11,14 @@ import 'react-animated-slider/build/horizontal.css';
 
 
 
+
+
+
 export default function Home(props) {
+
+
+
+  const [data,setdata] = useState(props.data.data)
 
   const slides = [
     { title: 'First item', description: 'Lorem ipsum' , image : '/image/backhead.png' , button : 'Voir pluse'},
@@ -123,12 +130,18 @@ export default function Home(props) {
 
 
 
+        {
+          data.map((item,key)=>{
 
+            return (
+              <ProduitCart data={item} />
+            )
 
-          <ProduitCart />
-          <ProduitCart />
-          <ProduitCart />
-          <ProduitCart />
+          })
+        }
+
+     
+
 
 
 
@@ -144,4 +157,27 @@ export default function Home(props) {
     </>
 
   )
+}
+
+
+const getdata = async () => {
+  const res = await fetch("http://localhost:3000/api/produits").then((res) =>
+    res.json()
+  );
+
+
+  return res;
+};
+
+export async function getServerSideProps({ params }) {
+  const data = await getdata();
+
+
+  
+
+  return {
+    props: {
+      data: { data: data },
+    },
+  };
 }
