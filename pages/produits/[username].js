@@ -14,7 +14,7 @@ import 'react-animated-slider/build/horizontal.css';
 const getdata = async (params) => {
 
 
-  const res = await fetch("https://dzshop.vercel.app/api/produit" ,  
+  const res = await fetch("http://localhost:3000/api/produit" ,  
   
   
   {

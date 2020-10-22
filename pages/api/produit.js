@@ -19,7 +19,7 @@ export default (req, res) => {
     {
       id : 2,
       name : 'verrière',
-      img : 'http://localhost:3000/image/1.jpg',
+      img : '/image/kenwood_chef_kvc30_2.png',
       prix : '6da'
       }
   
