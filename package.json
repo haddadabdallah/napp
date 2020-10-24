@@ -9,6 +9,7 @@
     "export": "npm run build && next export"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
     "bootstrap": "5.0.0-alpha1",
     "next": "9.5.5",
     "react": "16.14.0",
@@ -16,6 +17,9 @@
     "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
     "react-image-magnify": "^2.7.4",
-    "react-swift-slider": "^6.5.0"
+    "react-redux": "^7.1.0-rc.1",
+    "react-swift-slider": "^6.5.0",
+    "reactjs-localstorage": "^1.0.1",
+    "redux": "^4.0.5"
   }
 }

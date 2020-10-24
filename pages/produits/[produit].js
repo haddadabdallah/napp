@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../Layout/Navbar";
 
@@ -7,8 +7,8 @@ import ReactImageMagnify from 'react-image-magnify';
 
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
-
-
+import { useDispatch, useSelector } from "react-redux";
+import {addTodo , inciment,dicriment,ResetCount} from '../redux/actions'
 
 
 const getdata = async (params) => {
@@ -22,7 +22,7 @@ const getdata = async (params) => {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    } , body: JSON.stringify({id: params.username})
+    } , body: JSON.stringify({id: params.produit})
 }
   
   ).then((res) =>
@@ -45,15 +45,28 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export default function profile(props) {
+export default function produit (props) {
 
 
       
-    const {name , img , prix } = props.data.data
+  const {name , img , prix  , id} = props.data.data
+
+  
+
+ 
+  let count = useSelector(state => state.countreducer[0].count )
 
 
 
+ 
 
+useEffect(()=>{
+  dispatch(ResetCount())
+},[])
+
+
+  const dispatch = useDispatch()
+  const dispatchcount = useDispatch()
   
 
 
@@ -97,7 +110,7 @@ export default function profile(props) {
                     <div className="col-md-6 p-3 "> <h4> 
                         
                         <div className="titile_product">
-                            <h4>{name}</h4>
+                            <h4>{name}</h4> 
                         </div>
 
 <div className="prix_product">
@@ -108,9 +121,51 @@ export default function profile(props) {
 
 
 
-                       
+                        <div className="add_to_cart_product d-flex align-items-center">
+
+                        <div className="row">
+                          <div className="col-4 d-flex justify-content-between align-items-center " >
+                          <button onClick={() =>{
+
+dispatch(dicriment())
+
+                          }} className="btn w-100  bay_btn" >-</button>
+                        <h3 className="m-0 ml-2 mr-2 "> {count}  </h3>
+                        <button onClick={() =>{
+
+dispatchcount(inciment())
+
+                        }} className="btn w-100  bay_btn" >+</button>
+
+                          </div>
+                          <div className="col-8" >
+                          <button 
+                          
+                          onClick={()=>{
+                            dispatch(addTodo({
+                              id : id ,
+                              name : name,
+                              img : img,
+                              Qt : count
+                            }))
+                          }}
+                          
+                          
+                          className="btn w-100  bay_btn" >J'achète</button>
+                          </div>
+                
+
+                          
                         
-                        <button className="btn w-100 mt-3 bay_btn" >J'achète</button>
+                
+
+
+
+                        </div>
+                    
+                        </div>
+                        
+                       
                          </h4> </div>
                   </div>
                 </div>
